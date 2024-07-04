@@ -474,14 +474,14 @@ void HmlgwComponent::dump_config() {
     ESP_LOGCONFIG(TAG, "HMLGW Server:");
     ESP_LOGCONFIG(TAG, "  Address: %s:%u",
 #if ESPHOME_VERSION_CODE >= VERSION_CODE(2021, 10, 0)
-                  esphome::network::get_ip_addresses()[0].str(),
+                  esphome::network::get_ip_addresses()[0].str().c_str(),
 #else
                   network_get_address().c_str(),
 #endif
                   this->port_);
     ESP_LOGCONFIG(TAG, "  KeepAlive: %s:%u",
 #if ESPHOME_VERSION_CODE >= VERSION_CODE(2021, 10, 0)
-                  esphome::network::get_ip_addresses()[0].str(),
+                  esphome::network::get_ip_addresses()[0].str().c_str(),
 #else
                   network_get_address().c_str(),
 #endif
